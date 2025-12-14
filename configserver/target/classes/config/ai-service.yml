@@ -1,0 +1,28 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/Fitnessrecommendation
+      database: FitnessRecommendation
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8083
+
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
+
+gemini:
+  url: https://api.openai.com/v1/chat/completions
+  key: ${OPENAI_KEY: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}
